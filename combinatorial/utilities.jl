@@ -155,7 +155,7 @@ end
 
 # Parallel version
 function hyp_embedding_parallel(G_BFS, root, eps, weighted, edges_weights, tau)
-	n             = G_BFS[:order]()
+    n             = G_BFS[:order]()
     T             = zeros(BigFloat,n,2)
 
     root_children = collect(G_BFS[:successors](root));

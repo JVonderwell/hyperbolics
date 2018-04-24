@@ -193,8 +193,9 @@ def major_stats(G, scale, n, m, lazy_generation, Z,z, n_rows_sampled=250, num_wo
         logging.info("Compare matrices built")
         mc, me, avg_dist, nan_elements = dis.distortion(H, Hrec, n, num_workers)
         dist_wc = me*mc
-        mapscore = dis.map_score(scipy.sparse.csr_matrix.todense(G).A, Hrec, n, num_workers)
-
+        #mapscore = dis.map_score(scipy.sparse.csr_matrix.todense(G).A, Hrec, n, num_workers)
+        mapscore = 0
+        
     logging.info(f"Distortion avg={avg_dist} wc={dist_wc} me={me} mc={mc} nan_elements={nan_elements}")
     logging.info(f"MAP = {mapscore}")
     logging.info(f"data_scale={scale} scale={m.scale.data[0]}")

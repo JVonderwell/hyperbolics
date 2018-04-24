@@ -1,0 +1,6 @@
+from utils import dist
+
+# returns the distance between two tuples
+# tuple_file must be line separated tuples with same schema as original dataset
+def pair_distance(tuple_file, emb_file):
+    

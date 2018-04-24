@@ -87,6 +87,7 @@ end
 
 G        = lg.load_graph(parsed_args["dataset"])
 weighted = gu.is_weighted(G)
+
 epsilon      = parsed_args["eps"]
 println("\nGraph information")
 
@@ -186,8 +187,8 @@ include(pwd() * "/combinatorial/distances.jl")
 
         # this is this row MAP
         # TODO: n=n_bfs for the way we're currently loading data, but be careful in future
-        curr_map  = dis.map_row(true_dist_row, hyp_dist_row[1:n], n, sample_nodes[i]-1)
-        _maps[i]  = curr_map
+        # curr_map  = dis.map_row(true_dist_row, hyp_dist_row[1:n], n, sample_nodes[i]-1)
+        _maps[i]  = 0
 
         # print out current and running average MAP
         if parsed_args["verbose"]

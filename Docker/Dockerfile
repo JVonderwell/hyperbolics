@@ -35,7 +35,7 @@ RUN conda install pytorch torchvision -c pytorch
 # Now install the julia dependencies.
 #
 WORKDIR /opt/julia
-RUN pip install pandas matplotlib utils argh biopython
+RUN pip install pandas matplotlib utils argh biopython scipy
 RUN conda install networkx joblib
 
 RUN apt-get update && apt-get install -y curl
