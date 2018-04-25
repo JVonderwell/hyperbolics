@@ -56,9 +56,9 @@ class Parser:
             str_edge = str(edge[0]) + ' ' + str(edge[1])
 
             if weighted == 'count':
-                str_edge += ' ' + str(1 / self.edge_count_map[edge])
+                str_edge += ' ' + str(1.0 / self.edge_count_map[edge])
             elif weighted == 'proportion':
-                prop = float(self.edge_count_map[edge]) / self.node_count_map[edge[0]]
+                prop = 1.0 / (float(self.edge_count_map[edge]) / self.node_count_map[edge[0]])
                 str_edge += ' ' + str(prop)
 
             out.write(str_edge + '\n')
